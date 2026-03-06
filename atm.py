@@ -1,6 +1,8 @@
 balance = 5000
 pin = 1234
 transactions = []
+account_holder = "John Doe"
+account_number = "XXXX-XXXX-1234"
 
 
 def check_balance():
@@ -51,6 +53,13 @@ def transaction_history():
             print(t)
 
 
+def account_info():
+    print(f"\n--- Account Information ---")
+    print(f"Account Holder : {account_holder}")
+    print(f"Account Number : {account_number}")
+    print(f"Current Balance: ₹{balance}")
+
+
 def exit_account():
     print("\nThank you for using the ATM. Goodbye!")
 
@@ -69,7 +78,8 @@ def main():
         print("3. Withdraw")
         print("4. Change PIN")
         print("5. Transaction History")
-        print("6. Exit")
+        print("6. Account Info")
+        print("7. Exit")
         choice = input("Choose an option: ")
 
         if choice == "1":
@@ -83,6 +93,8 @@ def main():
         elif choice == "5":
             transaction_history()
         elif choice == "6":
+            account_info()
+        elif choice == "7":
             exit_account()
             break
         else:
